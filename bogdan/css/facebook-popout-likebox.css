@@ -1,0 +1,99 @@
+/* Static Facebook Pop Out Like Box */
+#fbplikebox {
+	display: block;
+	padding: 0;
+	z-index: 99999;
+	position: fixed;
+}
+
+.fbpl_top {
+	top: 0px;
+}
+
+.fbpl_left {
+	left: 0px;
+}
+
+.fbpl_right {
+	right: 0;
+}
+
+.fbpl_bottom {
+	bottom: 0;
+}
+
+.fbpl_bottom .fbplbadge {
+	display: block;
+	height: 47px;
+	left: 50%;
+	margin-left: -75px;
+	position: absolute;
+	top: -47px;
+	width: 150px;
+	background-image: url(../images/horizantal.png);
+	background-repeat: no-repeat;
+	-webkit-border-top-left-radius: 8px;
+	-webkit-border-top-right-radius: 8px;
+	-moz-border-radius-topleft: 8px;
+	-moz-border-radius-topright: 8px;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	overflow: hidden;
+}
+
+.fbpl_top .fbplbadge {
+	display: block;
+	height: 47px;
+	left: 50%;
+	margin-left: -75px;
+	position: absolute;
+	bottom: -47px;
+	width: 150px;
+	background-image: url(../images/horizantal.png);
+	background-repeat: no-repeat;
+	overflow: hidden;
+	-webkit-border-bottom-right-radius: 8px;
+	-webkit-border-bottom-left-radius: 8px;
+	-moz-border-radius-bottomright: 8px;
+	-moz-border-radius-bottomleft: 8px;
+	border-bottom-right-radius: 8px;
+	border-bottom-left-radius: 8px;
+}
+
+.fbpl_left .fbplbadge {
+	display: block;
+	height: 150px;
+	top: 50%;
+	margin-top: -75px;
+	position: absolute;
+	right: -47px;
+	width: 47px;
+	background-image: url(../images/vertical-left.png);
+	background-repeat: no-repeat;
+	overflow: hidden;
+	-webkit-border-top-right-radius: 8px;
+	-webkit-border-bottom-right-radius: 8px;
+	-moz-border-radius-topright: 8px;
+	-moz-border-radius-bottomright: 8px;
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
+}
+
+.fbpl_right .fbplbadge {
+	display: block;
+	height: 150px;
+	top: 50%;
+	margin-top: -75px;
+	position: absolute;
+	left: -47px;
+	width: 47px;
+	background-image: url(../images/vertical-right.png);
+	background-repeat: no-repeat;
+	overflow: hidden;
+	-webkit-border-top-left-radius: 8px;
+	-webkit-border-bottom-left-radius: 8px;
+	-moz-border-radius-topleft: 8px;
+	-moz-border-radius-bottomleft: 8px;
+	border-top-left-radius: 8px;
+	border-bottom-left-radius: 8px;
+}

@@ -1,0 +1,10 @@
+1. SSD Kingston A400 120GB SATA-III 2.5 inch - 169,99
+2. SSD Kingston SSDNow UV400 120GB SATA-III 2.5 inch - 194,22
+3. SSD WD NEW Green 120GB SATA-III 2.5 inch - 163,99
+4. SSD Samsung 850 EVO 250GB SATA-III 2.5 inch - 377,76
+5. SSD Samsung 960 EVO Series 250GB PCI Express x4 M.2 2280 - 569,47
+6. Hard disk WD Blue 1TB SATA-III 7200 RPM 64MB - 196,46
+7. Hard disk Seagate BarraCuda 1TB SATA-III 7200RPM 64MB - 199,66
+8. Hard disk WD Red 2TB SATA-III 5400RPM 64MB - 371,25
+9. Hard disk Seagate FireCuda SSHD 2TB SATA-III 7200RPM 64MB - 440,53
+10. Hard disk WD New Purple 3TB SATA-III IntelliPower 64MB - 437,25

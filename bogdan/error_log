@@ -1,0 +1,6 @@
+[19-Apr-2018 16:55:16 Europe/Bucharest] PHP Notice:  Undefined variable: i in /home/redzk/public_html/bogdan/index.php on line 19
+[19-Apr-2018 16:55:16 Europe/Bucharest] PHP Notice:  Undefined index:  in /home/redzk/public_html/bogdan/index.php on line 19
+[19-Apr-2018 16:55:16 Europe/Bucharest] PHP Notice:  Trying to get property of non-object in /home/redzk/public_html/bogdan/index.php on line 19
+[19-Apr-2018 16:56:03 Europe/Bucharest] PHP Notice:  Undefined variable: i in /home/redzk/public_html/bogdan/index.php on line 19
+[19-Apr-2018 16:56:03 Europe/Bucharest] PHP Notice:  Undefined index:  in /home/redzk/public_html/bogdan/index.php on line 19
+[19-Apr-2018 16:56:03 Europe/Bucharest] PHP Notice:  Trying to get property of non-object in /home/redzk/public_html/bogdan/index.php on line 19
