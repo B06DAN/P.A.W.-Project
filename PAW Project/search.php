@@ -1,4 +1,5 @@
 <?php
+include ('/inc/products');
 mysql_connect("localhost", "root", "") or die("Error connecting to database: " . mysql_error());
 mysql_select_db("proiect") or die(mysql_error());
 ?>

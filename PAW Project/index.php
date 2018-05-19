@@ -2,13 +2,10 @@
 include ('header.php');
 require_once (__DIR__ . '/inc/common.php');
 $product = new Products();
-if (isset($_GET["search"]))
-{
+if (isset($_GET["search"])) {
     $searchValue = filter_input(INPUT_GET, "search");
-    $p = $product->findProducts($searchValue);  
-}
-else
-{   
+    $p = $product->findProducts($searchValue);
+} else {
     $p = $product->getProducts();
 }
 
@@ -42,12 +39,6 @@ error_reporting(E_ALL);
     <script type="text/javascript" src="source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
 
-
-
-
-
-
-
     <style type="text/css">
         .fancybox-custom .fancybox-skin {
             box-shadow: 0 0 50px #222;
@@ -67,43 +58,43 @@ error_reporting(E_ALL);
 
 
     <div class="row">
-        <?php
-        for ($i = 0; $i < $no_of_element; $i++) {
-            ?>
+<?php
+for ($i = 0; $i < $no_of_element; $i++) {
+    ?>
             <div style="width: 390px;min-height: 200px;margin-top: 20px;" class="col-md-2"> 
                 <!--50-->
-                <?php
-                if (!empty($p[$i]->image)) {
-                    ?>
+            <?php
+            if (!empty($p[$i]->image)) {
+                ?>
                     <span class="titlup">
-                        <?php echo "<a href='product_details.php?id=" . $p[$i]->id . "'>", $p[$i]->name, "</a>";
-                        ?>
-                    </span>
-                    <?php
-                    echo "<div class='imagine_produs'><a href='" . $p[$i]->image . "' class='fancybox' data-fancybox-group='gallery'><img style='border-radius: 10px;width: 150px;' src='" . $p[$i]->thumb . "'/></a><br>";
-                    echo "<div style='display:inline-block;margin-left:10px;'>";
-                    $rate_vote = $p[$i]->rate_vote;
-                    $rate_number = $p[$i]->rate_number;
-                    $total_rate = $rate_vote / $rate_number;
-                    $total_rate = round($total_rate * 2) / 2;
-                    //echo $rate_vote/$rate_number;
-
-                    if (empty($total_rate)) {
-                        echo "<img width='100' src='images/rating/0.png'>";
-                    } else {
-                        echo "<img style='margin-top:-3px;' width='100' src='images/rating/$total_rate.png'>";
-                    }
-
-                    if (!empty($p[$i]->rate_number)) {
-                        echo "<div style='display:inline-block;'>", round($total_rate, 1), "</div>"; //$rate_vote/$rate_number, 1, '.', '5');
-                    } else {
-                        echo"0";
-                    }
-
-                    echo "</div>";
-                    echo"</div>";
-                } else {
+                    <?php echo "<a href='product_details.php?id=" . $p[$i]->id . "'>", $p[$i]->name, "</a>";
                     ?>
+                    </span>
+                        <?php
+                        echo "<div class='imagine_produs'><a href='" . $p[$i]->image . "' class='fancybox' data-fancybox-group='gallery'><img style='border-radius: 10px;width: 150px;' src='" . $p[$i]->thumb . "'/></a><br>";
+                        echo "<div style='display:inline-block;margin-left:10px;'>";
+                        $rate_vote = $p[$i]->rate_vote;
+                        $rate_number = $p[$i]->rate_number;
+                        $total_rate = $rate_vote / $rate_number;
+                        $total_rate = round($total_rate * 2) / 2;
+                        //echo $rate_vote/$rate_number;
+
+                        if (empty($total_rate)) {
+                            echo "<img width='100' src='images/rating/0.png'>";
+                        } else {
+                            echo "<img style='margin-top:-3px;' width='100' src='images/rating/$total_rate.png'>";
+                        }
+
+                        if (!empty($p[$i]->rate_number)) {
+                            echo "<div style='display:inline-block;'>", round($total_rate, 1), "</div>"; //$rate_vote/$rate_number, 1, '.', '5');
+                        } else {
+                            echo"0";
+                        }
+
+                        echo "</div>";
+                        echo"</div>";
+                    } else {
+                        ?>
 
                     <span class="titlup"><?php echo "<a href='product_details.php?id=" . $p[$i]->id . "'>", $p[$i]->name, "</a>"; ?><span class="price"><?php //echo $p[$i]->price, " RON";       ?></span></span>
                     <?php
@@ -115,9 +106,9 @@ error_reporting(E_ALL);
                 <span class="price"><?php echo $p[$i]->price_party, " Lei"; ?> </span>
                 <br/>
 
-                <?php
+    <?php
 //                echo "<div class='descr'>", $p[$i]->description, "</div></br>";
-                ?>
+    ?>
 
 
 
@@ -130,39 +121,39 @@ error_reporting(E_ALL);
 
 
 
-                <?php
-                if (isset($_POST['submit'])) {
-                    $product = new Pizza();
-                    $p = $product->getPizzas();
-                    $pid = $_GET['id'];
-                    $p = $product->getPizza($pid);
+    <?php
+    if (isset($_POST['submit'])) {
+        $product = new Pizza();
+        $p = $product->getPizzas();
+        $pid = $_GET['id'];
+        $p = $product->getPizza($pid);
 
-                    @mysql_connect("localhost", "root", "") or die(mysql_error());
-                    mysql_select_db("proiect") or die(mysql_error());
+        @mysql_connect("localhost", "root", "") or die(mysql_error());
+        mysql_select_db("proiect") or die(mysql_error());
 
-                    $nota = $_POST['rate_vote'];
-                    if (empty($nota)) {
-                        echo "Eroare";
-                    }
-
-                    mysql_query("UPDATE pizza SET rate_number = rate_number + 1, rate_vote = rate_vote + $nota  WHERE id = $pid");
-
-                    if (empty($_POST['rate_vote']) || trim($_POST['rate_vote']) === '') {
-                        $errors = "Complete the fields.";
-                    }
-
-                    if (empty($errors) === true) {
-                        $product->rate_vote = htmlentities(trim($_POST['rate_vote']));
-                    }
-
-                    header("Location: index.php");
-                    exit();
-                }
-                ?>
-            </div>
-            <?php
+        $nota = $_POST['rate_vote'];
+        if (empty($nota)) {
+            echo "Eroare";
         }
-        ?>
+
+        mysql_query("UPDATE pizza SET rate_number = rate_number + 1, rate_vote = rate_vote + $nota  WHERE id = $pid");
+
+        if (empty($_POST['rate_vote']) || trim($_POST['rate_vote']) === '') {
+            $errors = "Complete the fields.";
+        }
+
+        if (empty($errors) === true) {
+            $product->rate_vote = htmlentities(trim($_POST['rate_vote']));
+        }
+
+        header("Location: index.php");
+        exit();
+    }
+    ?>
+            </div>
+                <?php
+            }
+            ?>
     </div>
 </div>
 
