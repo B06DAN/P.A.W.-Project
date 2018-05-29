@@ -14,9 +14,9 @@ function check_user($username,$password)
 			AND
 				password='".md5($password)."'
 			";
-	//echo $sql;
+	
 	$result = mysql_query($sql) or die(mysql_error());
-	//aici verifici daca esista in baza de date 
+	
 	$row = mysql_num_rows($result);
 
 	if($row>0)
@@ -45,7 +45,7 @@ function userid($username,$password)
 				AND
 					password='".md5($password)."'
 				";
-		//echo $sql;
+		
 		$result = mysql_query($sql) or die(mysql_error());
 		
 		if($result)
@@ -69,6 +69,4 @@ function secured_pwd($pwd)
 	return $new_pw;
 
 }
-
-
 ?>

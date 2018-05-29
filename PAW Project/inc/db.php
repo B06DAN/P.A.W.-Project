@@ -1,5 +1,5 @@
 <?php
-//require_once(LIB_PATH.DS."config.php");
+
 class MySQLDatabase {
 
 	public $connection;
@@ -39,19 +39,16 @@ class MySQLDatabase {
 	}
 	
 	public function escape_value( $value ) {
-		if( $this->real_escape_string_exists ) { // PHP v4.3.0 or higher
-			// undo any magic quote effects so mysql_real_escape_string can do the work
+		if( $this->real_escape_string_exists ) { 
 			if( $this->magic_quotes_active ) { $value = stripslashes( $value ); }
 			$value = mysqli_real_escape_string($this->connection, $value );
-		} else { // before PHP v4.3.0
-			// if magic quotes aren't already on then add slashes manually
+		} else { 
 			if( !$this->magic_quotes_active ) { $value = addslashes( $value ); }
-			// if magic quotes are active, then the slashes already exist
 		}
 		return $value;
 	}
 
-	// "database-neutral" methods (for another type of db)
+
   public function fetch_array($result_set) { 
     return mysqli_fetch_array($result_set);
   }
@@ -61,7 +58,6 @@ class MySQLDatabase {
   }
   
   public function insert_id() {
-    // get the last id inserted over the current db connection
     return mysqli_insert_id($this->connection);
   }
   

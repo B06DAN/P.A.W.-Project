@@ -79,7 +79,7 @@ if (!empty($_GET["action"])) {
         <table class="table" cellpadding="10" cellspacing="1" style="background-color: #fff; border-radius:10px;">
             <tbody>
                 <tr>
-                    <th style="text-align:left;"><strong>Img</strong></th>
+<!--                    <th style="text-align:left;"><strong>Img</strong></th>-->
                     <th style="text-align:left;"><strong>Nume</strong></th>
                     <th style="text-align:left;"><strong>Codul produsului</strong></th>
                     <th style="text-align:right;"><strong>Cantitatea</strong></th>
@@ -90,7 +90,7 @@ if (!empty($_GET["action"])) {
                 foreach ($_SESSION["cart_item"] as $item) {
                     ?>
                     <tr>
-                        <td style="text-align:left;border-bottom:#F0F0F0 1px solid;"><strong><?php echo $item["image"]; ?></strong></td>
+<!--                        <td style="text-align:left;border-bottom:#F0F0F0 1px solid;"><strong><?php echo $item["image"]; ?></strong></td>-->
                         <td style="text-align:left;border-bottom:#F0F0F0 1px solid;"><strong><?php echo $item["name"]; ?></strong></td>
                         <td style="text-align:left;border-bottom:#F0F0F0 1px solid;"><?php echo $item["code"]; ?></td>
                         <td style="text-align:right;border-bottom:#F0F0F0 1px solid;"><?php echo $item["quantity"]; ?></td>

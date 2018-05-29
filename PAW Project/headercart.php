@@ -44,14 +44,15 @@ $request_uri = $_SERVER['REQUEST_URI'];
                 <div class="row">
                     <div class="telefon" style="float:right">
 
-                        <?php
-                        session_start();
-                        echo $_SESSION['user'];
-                        ?> 
+
 
                         <div class="btn-group">
                             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="height: 30px;font-size: 13px;width:100px">
-                                Contul meu <span class="caret"></span>
+                                <?php
+                                session_start();
+                                echo $_SESSION['user'];
+                                ?> 
+                                <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu">
                                 <li><a href="inregistrare.php">Inregistrare</a></li>
@@ -69,11 +70,11 @@ $request_uri = $_SERVER['REQUEST_URI'];
                         </a>
 
 
-<!--                        <div class="logo"style="float: left;">
-                            <div class="logo"style="float: left;height: 100px;">-->
-                                <a href="index.php"><img style="float: left;height: 100px;margin-right: 500px;margin-top: 36px;" src="images/logost.png"/></a>
-<!--                            </div>
-                        </div>-->
+                        <!--                        <div class="logo"style="float: left;">
+                                                    <div class="logo"style="float: left;height: 100px;">-->
+                        <a href="index.php"><img style="float: left;height: 100px;margin-right: 500px;margin-top: 36px;" src="images/logost.png"/></a>
+                        <!--                            </div>
+                                                </div>-->
                     </div>
 
                 </div>
