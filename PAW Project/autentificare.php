@@ -35,8 +35,10 @@ $request_uri = $_SERVER['REQUEST_URI'];
 
                 <div class="row">
                     <div class="logo">
-                        <div class="logo"style="margin-left: 210px;">
-                            <a href="index.php"><img style="margin-top: 100px;" src="images/headerai.png"/></a>
+                        <div align="center">
+                        <div class="logo">
+                            <a href="index.php"><img src="images/headerai.png"/></a>
+                        </div>
                         </div>
                     </div>
                     <div class="menu">

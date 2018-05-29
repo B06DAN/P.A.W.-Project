@@ -36,7 +36,7 @@ $request_uri = $_SERVER['REQUEST_URI'];
                 <div class="row">
                     <div class="logo">
                         <div class="logo"style="margin-left: 210px;">
-                            <a href="index.php"><img style= " margin-top: 100px;" src="images/headerai.png"/></a>
+                            <a href="index.php"><img src="images/headerai.png"/></a>
                         </div>
                     </div>
                     <div class="menu">
@@ -46,7 +46,7 @@ $request_uri = $_SERVER['REQUEST_URI'];
             </div>			
         </header>
 
-        <div class="login-boxai" style="height: 440px;">
+        <div class="login-boxai" style="height: 400px;">
             <img src="./images/avatar.png" class="avatarai">
             <h1 style="margin: 0;padding: 0 0 20px;text-align: center;font-size: 22px;">Inregistrare</h1>
             <form action="register.php" method="POST">

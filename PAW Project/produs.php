@@ -65,15 +65,15 @@ if (!empty($_GET["action"])) {
 </style>
 
 <div class="container">
+
+
     <div style="background: none repeat scroll 0% 0% #fff;
          padding-left: 20px;
          padding-top: 10px;
          padding-bottom: 10px;
          color: #EC2426;
          font-size: 25px;
-         border-radius: 3px;
-         font-weight: bold;
-         ">Produse</div>
+         font-weight: bold;">Produse</div>
 
 
 
@@ -86,28 +86,26 @@ if (!empty($_GET["action"])) {
         if (!empty($product_array)) {
             foreach ($product_array as $key => $value) {
                 $id = $product_array[$key]["id"];
-                ?>
-        
-        
-                <div class="col-md-3" >
-                    <div class="minicontainers">
-                        <div class="product-item">
-                            <form method="post" action="cosulmeu.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
-                                <div><strong><a id="nume" href="produs_details.php?id=<?php echo $id ?>"><?php echo $product_array[$key]["name"]; ?></a></strong></div>
-                                <div class="product-image"><a href="produs_details.php?id=<?php echo $product_array[$key]["id"]; ?>"><img style="margin-top: 22px;" class="img-thumbnail" src="<?php echo $product_array[$key]["image"]; ?>"></a></div>
-                                <div class="product-price"><?php echo "Pret : " . $product_array[$key]["price"] . " Lei"; ?></div>
-                                <div>
-                                    <!--<span class=" glyphicon glyphicon-shopping-cart " aria-hidden="true"></span>-->
-                                    <input class="pull-left form-control" style="width: 80px; margin-left: 10px; margin-top:-100px; visibility: hidden;" type="number" name="quantity" value="1" />
-                                    <input class="pull-right" type="submit" value="Adauga in cos" class="btnAddAction">
-                                </div>
-                            </form>
+                $category = $product_array[$key]["category"];
+                if ($request_uri == "/shop/produs.php?category=$category") {
+                    ?>
+                    <div class="col-md-3" >
+                        <div class="minicontainers">
+                            <div class="product-item">
+                                <form method="post" action="cosulmeu.php?action=add&code=<?php echo $product_array[$key]["code"]; ?>">
+                                    <div><strong><a id="nume" href="produs_details.php?id=<?php echo $id ?>"><?php echo $product_array[$key]["name"]; ?></a></strong></div>
+                                    <div class="product-image"><a href="produs_details.php?id=<?php echo $product_array[$key]["id"]; ?>"><img style="margin-top: 22px;" class="img-thumbnail" src="<?php echo $product_array[$key]["image"]; ?>"></a></div>
+                                    <div class="product-price"><?php echo "Pret : " . $product_array[$key]["price"] . " Lei"; ?></div>
+                                    <input class="pull-left form-control" style="width: 80px; margin-right: 10px; margin-top:-100px; visibility: hidden;" type="number" name="quantity" value="1" />
+                                    <div><input class="pull-right" type="submit" value="Adauga in cos" class="btnAddAction" /></div>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                </div>
-        
-        
-                <?php
+                    <?php
+                } else {
+//            echo "nothign";
+                }
             }
         }
         ?>
