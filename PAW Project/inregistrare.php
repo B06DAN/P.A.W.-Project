@@ -54,8 +54,10 @@ $request_uri = $_SERVER['REQUEST_URI'];
                 <input type="text" name="username" placeholder="Enter Username" required="required">
                 <p>Password</p>
                 <input type="password" name="password" placeholder="Enter Password" required="required">
+                
 <!--                <p>Confirm password</p>
                 <input type="password" name="password" placeholder="Enter Password Again">-->
+                
                 <input type="submit" name="submit" value="Register" >
                 <h6><a href="index.php"> < Inapoi!</a></h6>
 

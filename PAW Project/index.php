@@ -80,15 +80,12 @@ if (!empty($_GET["action"])) {
     <div id="product-grid">
         <?php
         $product_array = $db_handle->runQuery("SELECT * FROM tblproduct ORDER BY id ASC");
-
-
-
         if (!empty($product_array)) {
             foreach ($product_array as $key => $value) {
                 $id = $product_array[$key]["id"];
                 ?>
-        
-        
+
+
                 <div class="col-md-3" >
                     <div class="minicontainers">
                         <div class="product-item">
@@ -105,8 +102,8 @@ if (!empty($_GET["action"])) {
                         </div>
                     </div>
                 </div>
-        
-        
+
+
                 <?php
             }
         }

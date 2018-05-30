@@ -9,7 +9,7 @@ if (!empty($_GET["action"])) {
         case "add":
             if (!empty($_POST["quantity"])) {
                 $productByCode = $db_handle->runQuery("SELECT * FROM tblproduct WHERE code='" . $_GET["code"] . "'");
-                $itemArray = array($productByCode[0]["code"] => array('image' =>  $_POST["image"], 'name' => $productByCode[0]["name"], 'code' => $productByCode[0]["code"], 'quantity' => $_POST["quantity"], 'price' => $productByCode[0]["price"]));
+                $itemArray = array($productByCode[0]["code"] => array('image' => $_POST["image"], 'name' => $productByCode[0]["name"], 'code' => $productByCode[0]["code"], 'quantity' => $_POST["quantity"], 'price' => $productByCode[0]["price"]));
 
                 if (!empty($_SESSION["cart_item"])) {
                     if (in_array($productByCode[0]["code"], array_keys($_SESSION["cart_item"]))) {
@@ -79,7 +79,7 @@ if (!empty($_GET["action"])) {
         <table class="table" cellpadding="10" cellspacing="1" style="background-color: #fff; border-radius:10px;">
             <tbody>
                 <tr>
-<!--                    <th style="text-align:left;"><strong>Img</strong></th>-->
+    <!--                    <th style="text-align:left;"><strong>Img</strong></th>-->
                     <th style="text-align:left;"><strong>Nume</strong></th>
                     <th style="text-align:left;"><strong>Codul produsului</strong></th>
                     <th style="text-align:right;"><strong>Cantitatea</strong></th>
@@ -90,7 +90,7 @@ if (!empty($_GET["action"])) {
                 foreach ($_SESSION["cart_item"] as $item) {
                     ?>
                     <tr>
-<!--                        <td style="text-align:left;border-bottom:#F0F0F0 1px solid;"><strong><?php echo $item["image"]; ?></strong></td>-->
+        <!--                        <td style="text-align:left;border-bottom:#F0F0F0 1px solid;"><strong><?php echo $item["image"]; ?></strong></td>-->
                         <td style="text-align:left;border-bottom:#F0F0F0 1px solid;"><strong><?php echo $item["name"]; ?></strong></td>
                         <td style="text-align:left;border-bottom:#F0F0F0 1px solid;"><?php echo $item["code"]; ?></td>
                         <td style="text-align:right;border-bottom:#F0F0F0 1px solid;"><?php echo $item["quantity"]; ?></td>
@@ -144,23 +144,14 @@ if (!empty($_GET["action"])) {
                 <a style="float:right; margin-top: 20px; background-color: #E41F26;border-radius:10px;" href="produs.php?action=remove&code=<?php echo $item["code"]; ?>" class="btn btn-danger">Trimite comanda</a>
             </div>
         </div>
-
-
+        
         <?php
     } else {
         echo "Nu aveti nimic in cos.";
     }
     ?>
-
-
-
-
-
 </div>
 
-<?php
-
-?>
 <script>
         $(document).ready(function () {
 

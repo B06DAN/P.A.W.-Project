@@ -89,32 +89,6 @@ if (!empty($_GET["action"])) {
                 if ($request_uri == "/shop/produs_details.php?id=$id") {
                     ?>
                     <div class="product-item">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                         <div class="col-md-12" style=" margin-top: -20px;background-color: #fff;">
                             <h2 style="color: #E41F26;font-family: 'Open Sans Condensed';padding-left: 20px;margin-top: 0px; margin-bottom: 20px;">  <?php echo $product_array[$key]["name"]; ?></h2>
 
@@ -176,9 +150,6 @@ if (!empty($_GET["action"])) {
 
                                         </div>
                                     </form>
-
-
-
                                 </div>
 
 

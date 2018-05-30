@@ -132,7 +132,7 @@ if (!empty($_GET["action"])) {
                 } else {
                     echo "Nu au fost gasite rezultate , cautati altceva.";
                 }
-            } else { // if query length is less than minimum
+            } else {
                 echo "Minimum length is " . $min_length;
             }
             ?>

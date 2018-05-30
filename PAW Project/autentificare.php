@@ -51,6 +51,7 @@ $request_uri = $_SERVER['REQUEST_URI'];
         <div class="login-boxai">
             <img src="./images/avatar.png" class="avatarai">
             <h1 style="margin: 0;padding: 0 0 20px;text-align: center;font-size: 22px;">Autenficare</h1>
+            
             <form action="checklogin.php" method="POST">
                 <p>Username</p>
                 <input type="text" name="username" placeholder="Enter Username" required="required">
@@ -58,7 +59,6 @@ $request_uri = $_SERVER['REQUEST_URI'];
                 <input type="password" name="password" placeholder="Enter Password" required="required">
                 <input type="submit" name="submit" value="Login">
                 <h6>Nu ai un cont? Fa-ti unul <a href="inregistrare.php">aici!</a></h6>
-
             </form>
         </div>
     </body>
