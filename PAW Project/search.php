@@ -2,49 +2,7 @@
 @mysql_connect("localhost", "root", "") or die("Error connecting to database: " . mysql_error());
 mysql_select_db("shop") or die(mysql_error());
 include ('header.php');
-$request_uri = $_SERVER['REQUEST_URI'];
-require_once("inc/dbcontroller.php");
-$db_handle = new DBController();
-if (!empty($_GET["action"])) {
-    switch ($_GET["action"]) {
-        case "add":
-            if (!empty($_POST["quantity"])) {
-                $productByCode = $db_handle->runQuery("SELECT * FROM tblproduct WHERE code='" . $_GET["code"] . "'");
-                $itemArray = array($productByCode[0]["code"] => array('name' => $productByCode[0]["name"], 'code' => $productByCode[0]["code"], 'quantity' => $_POST["quantity"], 'price' => $productByCode[0]["price"]));
-
-                if (!empty($_SESSION["cart_item"])) {
-                    if (in_array($productByCode[0]["code"], array_keys($_SESSION["cart_item"]))) {
-                        foreach ($_SESSION["cart_item"] as $k => $v) {
-                            if ($productByCode[0]["code"] == $k) {
-                                if (empty($_SESSION["cart_item"][$k]["quantity"])) {
-                                    $_SESSION["cart_item"][$k]["quantity"] = 0;
-                                }
-                                $_SESSION["cart_item"][$k]["quantity"] += $_POST["quantity"];
-                            }
-                        }
-                    } else {
-                        $_SESSION["cart_item"] = array_merge($_SESSION["cart_item"], $itemArray);
-                    }
-                } else {
-                    $_SESSION["cart_item"] = $itemArray;
-                }
-            }
-            break;
-        case "remove":
-            if (!empty($_SESSION["cart_item"])) {
-                foreach ($_SESSION["cart_item"] as $k => $v) {
-                    if ($_GET["code"] == $k)
-                        unset($_SESSION["cart_item"][$k]);
-                    if (empty($_SESSION["cart_item"]))
-                        unset($_SESSION["cart_item"]);
-                }
-            }
-            break;
-        case "empty":
-            unset($_SESSION["cart_item"]);
-            break;
-    }
-}
+include ('cart.php');
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
